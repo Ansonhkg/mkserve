@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mkserve</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/icon.svg" />
+    <link id="markdown-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css" disabled />
+    <link id="markdown-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown-dark.min.css" />
+    <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css" disabled />
+    <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css" />
+    <link rel="stylesheet" href="/assets/app.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/15.0.12/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.6/purify.min.js"></script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [["$", "$"], ["\\(", "\\)"]],
+          displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+          processEscapes: true,
+        },
+      };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.min.js"></script>
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="brand-row">
+            <img class="brand-icon" src="/assets/icon.svg" alt="mkserve icon" />
+            <div class="eyebrow">mkserve</div>
+          </div>
+          <h1 id="root-name">Loading...</h1>
+          <p id="root-dir" class="muted"></p>
+        </div>
+
+        <div class="sidebar-search">
+          <input id="search-input" type="search" placeholder="Search markdown files" autocomplete="off" />
+        </div>
+
+        <div class="sidebar-meta muted">
+          <span id="file-count">0 files</span>
+        </div>
+
+        <nav id="tree" class="tree" aria-label="Markdown files"></nav>
+        <div id="tree-empty" class="empty hidden">No markdown files found in this directory.</div>
+      </aside>
+
+      <main class="content">
+        <header class="content-header">
+          <div>
+            <div id="document-path" class="eyebrow">No file selected</div>
+            <h2 id="document-title">Select a markdown file</h2>
+          </div>
+          <div class="header-actions">
+            <div class="view-toggle" role="tablist" aria-label="Preview mode">
+              <button id="render-view-button" class="toggle-button active" type="button" aria-pressed="true">Render</button>
+              <button id="raw-view-button" class="toggle-button" type="button" aria-pressed="false">Raw</button>
+            </div>
+            <button id="preview-theme-button" class="icon-button" type="button" aria-label="Toggle preview theme" title="Toggle preview theme"></button>
+            <button id="copy-markdown-button" class="icon-button" type="button" aria-label="Copy markdown" title="Copy markdown"></button>
+            <div id="status" class="status">Idle</div>
+          </div>
+        </header>
+
+        <section class="preview-frame">
+          <article id="preview" class="markdown-body preview-body">
+            <div class="empty">Choose a markdown file from the sidebar.</div>
+          </article>
+          <pre id="raw-preview" class="raw-preview hidden"><code id="raw-code" class="hljs language-markdown"></code></pre>
+        </section>
+      </main>
+    </div>
+
+    <script src="/assets/app.js" defer></script>
+  </body>
+</html>

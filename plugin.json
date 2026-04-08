@@ -1,0 +1,8 @@
+{
+  "key": "mkserve",
+  "title": "mkserve",
+  "description": "Serve a local markdown tree through a focused browser viewer.",
+  "version": "0.1.0",
+  "defaultPort": 4321,
+  "supports": ["cli", "http", "web"]
+}
